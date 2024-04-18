@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
 public class MP_Array5_Con {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner rd = new Scanner(System.in);
         int n, insert;
 
@@ -12,55 +11,42 @@ public class MP_Array5_Con {
         int num[] = new int[n];
 
         System.out.print("Input " + n + " elements in the sorted array in ascending order\n");
-        for(int i = 0; i < n; i++ )
-        {
+        for(int i = 0; i < n; i++) {
             System.out.print("Input element[" + (i+1) +"]: ");
             num[i] = rd.nextInt();
         }
 
-        System.out.print("The current list of the array:");
-        for(int i = 0; i < n; i++)
-        {
+        System.out.println("The current list of the array:");
+        for(int i = 0; i < n; i++) {
             System.out.print(" " + num[i]);
         }
 
-        System.out.println("Input the value to be inserted: ");
+        System.out.println("\nInput the value to be inserted: ");
         insert = rd.nextInt();
 
         rd.close();
 
-        int elem_new = n + 1;
-        //new array
-        int second[] = new int[elem_new];
+        int length_arr = n+1;
+        int second[] = new int[length_arr];
+        int k = 0;
 
-        for(int i = 0; i < n; i++)
-        {
-            second[i] = num[i];
-        }
-        second[elem_new] = insert;
-        int temp;
-
-
-        for (int i = 0; i < elem_new; i++) 
-        {
-            for (int j = 0; j < (elem_new); j++) 
-            {
-                if (second[j] > second[j]) 
-                {
-                    // Swap elements
-                    temp = second[j];
-                    second[j] = second[j];
-                    second[j] = temp;
-                }
-            }
+        // Finding the position to insert
+        while(k < n && num[k] < insert) {
+            second[k] = num[k];
+            k++;
         }
 
-        System.out.println("After Inserting New the Array List contains: ");
-        for(int i = 0; i < elem_new; i++)
-        {
-            System.out.print(" " + second[i]);
-        }
-        System.out.print("\n");
+        second[k] = insert;
 
+        // Inserting remaining elements
+        for(int i = k+1; i < length_arr; i++) {
+            second[i] = num[i-1];
+        }
+
+        System.out.println("After inserting " + insert + " in the array, the list contains: ");
+        for(int i = 0; i < length_arr; i++) {
+            System.out.print(second[i] + " ");
+        }
+        System.out.println("");
     }    
 }

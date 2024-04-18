@@ -1,0 +1,61 @@
+import javax.swing.JOptionPane;
+
+class MP_Array4_Con
+{
+    public static void main(String [] args)
+    {
+
+        try
+        { // Input the elements in the array
+            String store = JOptionPane.showInputDialog("Input the number of elements to be stored in the array: ");
+            int n = Integer.parseInt(store);
+
+          // array for the input element; n being the number of storage and 2 for the original and counting
+            int num[][] = new int[n][2];
+          // Inputs the elements by the user
+            System.out.println("Input " + n + " elements in the array");
+            for(int i = 0; i < n; i++)
+            {
+                // Input number in array element
+                String in_elem = JOptionPane.showInputDialog("Input element[" + i + "]: ");
+                num[i][0] = Integer.parseInt(in_elem);
+            }
+
+            // loop to count the elements
+            for(int i = 0; i < n; i++)
+            {
+                if(num[i][1] == 0) //[i][1] doesnt have value yet so it is literally 0
+                {
+                    num[i][1] = 1; // it adds value to mark it, for no repeating the process
+                    for(int j = 0; j < n; j++) //loop for comparison of the first element for the rest of the elemenet
+                    {
+                        if(num[i][0] == num[j][0])
+                        {
+                            num[i][1]++; //increases count based on occurences
+                            num[j][1] += -1; //the compared identical is marked -1 to prevent it later from printing
+                        }
+                    }
+                }
+                
+            }
+            
+            
+            String output = "The frequency of all elements of an array: ";
+            for(int z = 0; z < n; z++)
+            { //Only those who are no -1(The identicals), and 0(not checked) are not belong in this loop
+                if(num[z][1] > 0) 
+                {
+                    output += "\n" +num[z][0] + " occurs " + num[z][1] + " times";
+                }
+            }
+
+            JOptionPane.showMessageDialog(null, output);
+        }
+        
+        //Error Message; debugger
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Error: " + e);
+        }
+    }
+}

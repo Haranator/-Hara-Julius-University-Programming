@@ -1,3 +1,4 @@
+package Java;
 import javax.swing.JOptionPane;
 
 class GUINumberWord {

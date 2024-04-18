@@ -1,3 +1,4 @@
+package Java;
 import java.util.Scanner;
 class ConsoleMonths {
     public static void main(String[] args)

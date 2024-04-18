@@ -1,24 +1,24 @@
-import java.util.Scanner;
+package Java;
+import javax.swing.JOptionPane;
 
-class ConsoleTimeConversion {
+class GUITimeConversion {
     public static void main(String[] args)
     {
-        Scanner scan = new Scanner (System.in);
 
         try
         {
             int construct_hour = 0;
             String meridiem = "";
-            System.out.println("Input military time HOUR, press ENTER,\nthen input SEMI-COLON, lastly input MINUTES: ");
-            int hour = scan.nextInt();
-            String semi_colon = scan.next();
-            int minute = scan.nextInt();
 
-            scan.close();
+            String text_hour = JOptionPane.showInputDialog("\nInput Hour: ");
+            int hour = Integer.parseInt(text_hour);
+            String semi_colon = JOptionPane.showInputDialog("\nInput Colon ");
+            String text_minute = JOptionPane.showInputDialog("\nInput Minute:");
+            int minute = Integer.parseInt(text_minute);
 
             if((hour > 24 || hour < 0) || (minute > 60 || minute < 0) || (!":".equals(semi_colon)))
             {
-                System.out.println("Error: invalid characters");
+                JOptionPane.showMessageDialog(null, "Error: invalid characters");
             }
             else
             {
@@ -84,13 +84,13 @@ class ConsoleTimeConversion {
                 {
                     format_hour = Integer.toString(construct_hour);
                 }
-                System.out.println(format_hour + semi_colon + format_minute + meridiem);
+                JOptionPane.showMessageDialog(null, format_hour + semi_colon + format_minute + meridiem);
             }
             
         }
         catch (Exception e)
         {
-            System.out.println("Error: " + e);
+            JOptionPane.showMessageDialog(null, "Error: " + e);
         }
         
 

@@ -11,7 +11,7 @@ public class MP_String3_GUI
 {
     public static void main(String [] args)
     {
-        String orig = "The Quick BroWn FoX! ";
+        String orig = JOptionPane.showInputDialog("Enter text to lowercase: ");
         String sentence = orig.toLowerCase();
         
         JOptionPane.showMessageDialog(null, "Original String: " + orig + "\nString in Lowercase: " + sentence);

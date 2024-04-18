@@ -4,7 +4,7 @@ import java.util.Scanner;
 class SumSquareNum {
     public static void main (String [] args)
     {
-        double new_n;
+        double new_n, summation = 0;
         Scanner reader = new Scanner(System.in);
 
         System.out.print("Enter number: ");
@@ -18,7 +18,9 @@ class SumSquareNum {
         {
             new_n = Math.pow(i, 2);
             System.out.println("square of " + i + " is " + new_n);
-
+            summation += new_n;
         }
+
+        System.out.println("The summation of all Square until the number: " + summation); 
     }
 }

@@ -12,12 +12,17 @@ public class MP_String2_GUI
 {
     public static void main(String [] args)
     {
-        String orig = "The quick brown fox jumps over the lazy dog";
-        StringBuilder sentence = new StringBuilder(orig);
+        String orig = JOptionPane.showInputDialog("Input string: ");
         
-        sentence.deleteCharAt(40);
-        sentence.replace(40, 40, "f");
+        String rep = JOptionPane.showInputDialog("Enter character to replace: ");
+
+        String sub = JOptionPane.showInputDialog("Enter substitute: ");
         
-        JOptionPane.showMessageDialog(null, sentence);
+        for(int i = 0; i < rep.length(); i++)
+        {
+            orig = orig.replace(rep.charAt(i), sub.charAt(i));
+        }
+        
+        JOptionPane.showMessageDialog(null, "New sentence: " + orig);
     }
 }

@@ -1,3 +1,4 @@
+package Java;
 import java.util.Scanner;
 
 class MP_Array3_Con

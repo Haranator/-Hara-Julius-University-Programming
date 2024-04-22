@@ -2,6 +2,8 @@
 NATAPOS KO NG 4:01AM to NG APRIL 10, 2024
 ANG HIRAP ISIPIN NG LOGIC, GRABE
 */ 
+package Java;
+
 import java.util.Scanner;
 
 class MP_Array4_Con

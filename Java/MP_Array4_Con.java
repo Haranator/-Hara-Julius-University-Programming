@@ -6,8 +6,7 @@ package Java;
 
 import java.util.Scanner;
 
-class MP_Array4_Con
-{
+class MP_Array4_Con{
     public static void main(String [] args)
     {
         Scanner rd = new Scanner(System.in);
